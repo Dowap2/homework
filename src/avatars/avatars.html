@@ -11,15 +11,13 @@
     <link rel="stylesheet" href="./styles/avatars.css" />
   </head>
   <body>
-    <div>
-      <div class="user_profile_comoponent">
-        <script language="javascript">
-          const is_active = [0, 1, 0, 1, 1, 1, 0, 0];
-          for (i = 0; i < 8; i++) {
-            document.write(`<div class="user"><img class="user_profile" src="./images/face${i + 1}.jpg"></img><div class="user_active_${is_active[i] === 0 ? 'active' : 'deactive'}"></div></div>`);
-          }
-        </script>
-      </div>
+    <div class="user_profile_comoponent">
+      <script language="javascript">
+        const is_active = [0, 1, 0, 1, 1, 1, 0, 0];
+        for (i = 0; i < 8; i++) {
+          document.write(`<div class="user"><img class="user_profile_img" src="./images/face${i + 1}.jpg" alt="avartar${i + 1}"></img><div class="user_active_${is_active[i] === 0 ? 'active' : 'deactive'}"></div></div>`);
+        }
+      </script>
     </div>
   </body>
 </html>
