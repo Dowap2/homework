@@ -1,1 +1,40 @@
-/* 여기에 스타일을 구현해 주세요 */
+.user_profile_comoponent {
+  width: 396px;
+  height: 195px;
+  padding: 20px;
+}
+
+.user {
+  position: relative;
+  float: left;
+  margin: 10px;
+}
+
+.user_profile {
+  width: 64px;
+  height: 64px;
+  background: yellow;
+  border-radius: 100%;
+}
+
+.user_active_active {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  width: 18px;
+  height: 18px;
+  background: #03cc5c;
+  border: 1px solid #fff;
+  border-radius: 100%;
+}
+
+.user_active_deactive {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  width: 18px;
+  height: 18px;
+  background: #bcc3c7;
+  border: 1px solid #fff;
+  border-radius: 100%;
+}
