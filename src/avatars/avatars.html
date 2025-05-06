@@ -16,9 +16,9 @@
         const user_active_array = [0, 1, 0, 1, 1, 1, 0, 0];
         const container = document.getElementById('user_container');
 
-        for (let i = 0; i < is_active.length; i++) {
-          const status = is_active[i] === 0 ? '활성' : '비활성';
-          const activeClass = is_active[i] === 0 ? 'active' : 'deactive';
+        for (let i = 0; i < user_active_array.length; i++) {
+          const status = user_active_array[i] === 0 ? '활성' : '비활성';
+          const activeClass = user_active_array[i] === 0 ? 'active' : 'deactive';
 
           const userDiv = document.createElement('div');
           userDiv.className = 'user';
