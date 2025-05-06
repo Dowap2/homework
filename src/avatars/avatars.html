@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="./styles/avatars.css" />
   </head>
   <body>
-    <div class="user_profile_comoponent" id="user_container">
+    <section class="user_profile_comoponent" id="user_container">
       <script language="javascript">
         const user_active_array = [0, 1, 0, 1, 1, 1, 0, 0];
         const container = document.getElementById('user_container');
@@ -20,25 +20,25 @@
           const status = user_active_array[i] === 0 ? '활성' : '비활성';
           const activeClass = user_active_array[i] === 0 ? 'active' : 'deactive';
 
-          const userDiv = document.createElement('div');
-          userDiv.className = 'user';
-          userDiv.setAttribute('aria-label', `사용자 ${i + 1}, ${status}`);
+          const user = document.createElement('article');
+          user.className = 'user';
+          user.setAttribute('aria-label', `사용자 ${i + 1}, ${status}`);
 
           const img = document.createElement('img');
           img.className = 'user_profile_img';
           img.src = `./images/face${i + 1}.jpg`;
           img.alt = `사용자 ${i + 1} 프로필 이미지`;
 
-          const statusDiv = document.createElement('div');
-          statusDiv.className = `user_active_${activeClass}`;
-          statusDiv.setAttribute('aria-hidden', 'true');
+          const statusCircle = document.createElement('div');
+          statusCircle.className = `user_active_${activeClass}`;
+          statusCircle.setAttribute('aria-hidden', 'true');
 
-          userDiv.appendChild(img);
-          userDiv.appendChild(statusDiv);
-          container.appendChild(userDiv);
+          user.appendChild(img);
+          user.appendChild(statusCircle);
+          container.appendChild(user);
         }
       </script>
-    </div>
+    </section>
   </body>
 </html>
 
