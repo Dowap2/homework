@@ -11,13 +11,84 @@
     <link rel="stylesheet" href="./styles/avatars.css" />
   </head>
   <body>
-    <div class="user_profile_comoponent">
+    <div class="user_profile_comoponent" id="user_container">
       <script language="javascript">
-        const is_active = [0, 1, 0, 1, 1, 1, 0, 0];
-        for (i = 0; i < 8; i++) {
-          document.write(`<div class="user"><img class="user_profile_img" src="./images/face${i + 1}.jpg" alt="avartar${i + 1}"></img><div class="user_active_${is_active[i] === 0 ? 'active' : 'deactive'}"></div></div>`);
+        const user_active_array = [0, 1, 0, 1, 1, 1, 0, 0];
+        const container = document.getElementById('user_container');
+
+        for (let i = 0; i < is_active.length; i++) {
+          const status = is_active[i] === 0 ? '활성' : '비활성';
+          const activeClass = is_active[i] === 0 ? 'active' : 'deactive';
+
+          const userDiv = document.createElement('div');
+          userDiv.className = 'user';
+          userDiv.setAttribute('aria-label', `사용자 ${i + 1}, ${status}`);
+
+          const img = document.createElement('img');
+          img.className = 'user_profile_img';
+          img.src = `./images/face${i + 1}.jpg`;
+          img.alt = `사용자 ${i + 1} 프로필 이미지`;
+
+          const statusDiv = document.createElement('div');
+          statusDiv.className = `user_active_${activeClass}`;
+          statusDiv.setAttribute('aria-hidden', 'true');
+
+          userDiv.appendChild(img);
+          userDiv.appendChild(statusDiv);
+          container.appendChild(userDiv);
         }
       </script>
     </div>
   </body>
 </html>
+
+<!-- <!doctype html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Avatars 과제</title>
+    <link rel="shortcut icon" href="/src/assets/favicon/likelion.ico" type="image/x-icon" />
+    <link rel="icon" href="/src/assets/favicon/likelion.svg" />
+    <link rel="preload" as="font" href="https://cdn.jsdelivr.net/gh/sun-typeface/SUIT@2/fonts/static/woff2/SUIT-Regular.woff2" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sun-typeface/SUIT@2/fonts/static/woff2/SUIT.css" />
+    <link rel="stylesheet" href="./styles/avatars.css" />
+  </head>
+  <body>
+    <div class="user_profile_component">
+
+      <div class="user" aria-label="사용자 1, 비활성">
+        <img class="user_profile_img" src="./images/face1.jpg" alt="사용자 1 프로필 이미지" />
+        <div class="user_active_deactive" aria-hidden="true"></div>
+      </div>
+      <div class="user" aria-label="사용자 2, 활성">
+        <img class="user_profile_img" src="./images/face2.jpg" alt="사용자 2 프로필 이미지" />
+        <div class="user_active_active" aria-hidden="true"></div>
+      </div>
+      <div class="user" aria-label="사용자 3, 비활성">
+        <img class="user_profile_img" src="./images/face3.jpg" alt="사용자 3 프로필 이미지" />
+        <div class="user_active_deactive" aria-hidden="true"></div>
+      </div>
+      <div class="user" aria-label="사용자 4, 활성">
+        <img class="user_profile_img" src="./images/face4.jpg" alt="사용자 4 프로필 이미지" />
+        <div class="user_active_active" aria-hidden="true"></div>
+      </div>
+      <div class="user" aria-label="사용자 5, 활성">
+        <img class="user_profile_img" src="./images/face5.jpg" alt="사용자 5 프로필 이미지" />
+        <div class="user_active_active" aria-hidden="true"></div>
+      </div>
+      <div class="user" aria-label="사용자 6, 활성">
+        <img class="user_profile_img" src="./images/face6.jpg" alt="사용자 6 프로필 이미지" />
+        <div class="user_active_active" aria-hidden="true"></div>
+      </div>
+      <div class="user" aria-label="사용자 7, 비활성">
+        <img class="user_profile_img" src="./images/face7.jpg" alt="사용자 7 프로필 이미지" />
+        <div class="user_active_deactive" aria-hidden="true"></div>
+      </div>
+      <div class="user" aria-label="사용자 8, 비활성">
+        <img class="user_profile_img" src="./images/face8.jpg" alt="사용자 8 프로필 이미지" />
+        <div class="user_active_deactive" aria-hidden="true"></div>
+      </div>
+    </div>
+  </body>
+</html> -->
