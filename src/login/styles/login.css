@@ -3,11 +3,16 @@
   --margin: 1rem;
 }
 
+body {
+  margin: 0;
+}
+
 .loginComponent {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin: 1.25rem;
   margin-top: 5rem;
 }
 
@@ -73,11 +78,11 @@
 
 .subOptionComponent {
   margin-top: 0.625rem;
+  float: right;
 }
 
 .keepLoginComponent {
   display: flex;
-  justify-content: flex-end;
   align-items: center;
 }
 
