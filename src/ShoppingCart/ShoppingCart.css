@@ -1,0 +1,107 @@
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.shopping_cart {
+  width: 700px;
+  height: 440px;
+  padding: 20px;
+  border: 6px solid #4d4d4d;
+  border-radius: 8px;
+}
+
+.shopping_cart_header {
+  display: flex;
+  margin-bottom: 8px;
+}
+
+.shopping_cart_header_icon {
+  width: 24px;
+  height: 24px;
+  padding: 12px;
+}
+
+.shopping_cart_header_title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #4d4d4d;
+  line-height: 48px; /* height와 동일하게 */
+  text-align: center;
+}
+
+.shopping_cart_list {
+  border-top: 1px solid #4d4d4d;
+  border-bottom: 1px solid #4d4d4d;
+}
+
+.shopping_cart_item {
+  display: flex;
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.shopping_cart_item_image {
+  width: 64px;
+  height: 64px;
+}
+
+.shopping_cart_item_contents {
+  margin-left: 12px;
+}
+
+.shopping_cart_item_title {
+  color: #4d4d4d;
+  font-size: 20px;
+}
+
+.shopping_cart_item_price {
+  color: #4d4d4d;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.shopping_cart_item_counter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 28px;
+  background-color: #eee;
+  border: 1px solid #b3b3b3;
+  border-radius: 18px;
+  margin-left: auto;
+}
+
+.shopping_cart_item_counter_input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 12px;
+  border: 0;
+  padding: 0;
+  background: none;
+  pointer-events: none;
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+  color: #4d4d4d;
+}
+
+.shopping_cart_item_counter_button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.shopping_cart_item_counter_button_icon {
+  width: 16px;
+  height: 16px;
+}

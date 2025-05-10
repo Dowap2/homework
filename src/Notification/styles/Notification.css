@@ -1,0 +1,66 @@
+body {
+  background-color: #f9f9f9;
+  font-family: sans-serif;
+}
+
+.notification_card {
+  position: relative;
+  width: 332px;
+  height: 84px;
+  margin: 30px auto;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 2px 2px 2px #f9fefe;
+  overflow: hidden;
+}
+
+.notification_icon {
+  float: left;
+  width: 64px;
+  height: 100%;
+  text-align: center;
+}
+
+.notification_icon img {
+  height: 28px;
+  margin-top: 28px;
+}
+
+.notification_contents {
+  float: left;
+  margin-top: 20px;
+}
+
+.notification_title {
+  font-size: 18px;
+  margin: 0;
+}
+
+.notification_subtext {
+  font-size: 14px;
+  margin: 4px 0 0 0;
+}
+
+.notification_time {
+  font-weight: bold;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 11px;
+  color: #666;
+  margin: 0;
+}
+
+#meal {
+  color: #e39042;
+}
+
+#plant {
+  color: #22be61;
+}
+
+.notification_card::after {
+  content: '';
+  display: block;
+  clear: both;
+}

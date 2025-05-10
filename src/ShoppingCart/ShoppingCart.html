@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./ShoppingCart.css" />
+    <title>ShoppingCart</title>
+    <script>
+      function changeValue(id, value) {
+        const input = document.getElementById(id);
+        const current = parseInt(input.value) || 0;
+        input.value = current + value < 0 ? 0 : current + value;
+      }
+    </script>
+  </head>
+  <body>
+    <div class="shopping_cart">
+      <div class="shopping_cart_header">
+        <img src="./images/ShoppingCartIcon.png" alt="ShoppingCart" class="shopping_cart_header_icon" />
+        <div class="shopping_cart_header_title">장바구니</div>
+      </div>
+      <div class="shopping_cart_list">
+        <div class="shopping_cart_item">
+          <img src="./images/ProductImage1.png" alt="ProductImage1" class="shopping_cart_item_image" />
+          <div class="shopping_cart_item_contents">
+            <div class="shopping_cart_item_title">1A 우유 900mL</div>
+            <div class="shopping_cart_item_price">1,870 원</div>
+          </div>
+          <div class="shopping_cart_item_counter">
+            <button onclick="changeValue('counter1', -1)" class="shopping_cart_item_counter_button">
+              <img src="./images/Minus.png" alt="Minus" class="shopping_cart_item_counter_button_icon" />
+            </button>
+            <input type="number" id="counter1" value="0" class="shopping_cart_item_counter_input" />
+            <button onclick="changeValue('counter1', 1)" class="shopping_cart_item_counter_button">
+              <img src="./images/Plus.png" alt="Plus" class="shopping_cart_item_counter_button_icon" />
+            </button>
+          </div>
+        </div>
+        <div class="shopping_cart_item">
+          <img src="./images/ProductImage2.png" alt="ProductImage2" class="shopping_cart_item_image" />
+          <div class="shopping_cart_item_contents">
+            <div class="shopping_cart_item_title">맛있는 콩나물 500g</div>
+            <div class="shopping_cart_item_price">1,280 원</div>
+          </div>
+          <div class="shopping_cart_item_counter">
+            <button onclick="changeValue('counter2', -1)" class="shopping_cart_item_counter_button">
+              <img src="./images/Minus.png" alt="Minus" class="shopping_cart_item_counter_button_icon" />
+            </button>
+            <input type="number" id="counter2" value="0" class="shopping_cart_item_counter_input" />
+            <button onclick="changeValue('counter2', 1)" class="shopping_cart_item_counter_button">
+              <img src="./images/Plus.png" alt="Plus" class="shopping_cart_item_counter_button_icon" />
+            </button>
+          </div>
+        </div>
+        <div class="shopping_cart_item">
+          <img src="./images/ProductImage3.png" alt="ProductImage3" class="shopping_cart_item_image" />
+          <div class="shopping_cart_item_contents">
+            <div class="shopping_cart_item_title">고소한 두부 1Kg</div>
+            <div class="shopping_cart_item_price">2,210 원</div>
+          </div>
+          <div class="shopping_cart_item_counter">
+            <button onclick="changeValue('counter3', -1)" class="shopping_cart_item_counter_button">
+              <img src="./images/Minus.png" alt="Minus" class="shopping_cart_item_counter_button_icon" />
+            </button>
+            <input type="number" id="counter3" value="0" class="shopping_cart_item_counter_input" />
+            <button onclick="changeValue('counter3', 1)" class="shopping_cart_item_counter_button">
+              <img src="./images/Plus.png" alt="Plus" class="shopping_cart_item_counter_button_icon" />
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
