@@ -1,0 +1,164 @@
+:root {
+  --font-base: 1rem;
+  --margin: 1rem;
+}
+
+.loginComponent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 5rem;
+}
+
+.loginForm {
+  width: 100%;
+}
+
+.loginLogo {
+  width: 230px;
+}
+
+.loginButton {
+  width: 100%;
+  height: 2.8125rem;
+  background-color: #03cf5d;
+  color: #fff;
+  font-size: 1rem;
+  margin-top: 1.25rem;
+  padding: 0;
+  border: 0;
+}
+
+.loginFormInput {
+  box-sizing: border-box;
+  width: 100%;
+  height: 3rem;
+  padding: 1rem;
+  margin-top: 0.5rem;
+  border: 1px solid #dadada;
+  background-color: #fff;
+}
+
+.loginFormInput:focus {
+  border-color: #03cf5d;
+  outline: none;
+  background-color: #eef6ff;
+}
+
+.idErrorMessage,
+.pwErrorMessage {
+  color: red;
+  font-size: 0.75rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.625rem;
+  display: none;
+}
+
+.loginFormInput:invalid:not(placeholder-shown) + .idErrorMessage {
+  display: block;
+}
+
+.loginFormInput:placeholder-shown + .idErrorMessage {
+  display: none !important;
+}
+
+.loginFormInput:invalid:not(placeholder-shown) + .pwErrorMessage {
+  display: block;
+}
+
+.loginFormInput:placeholder-shown + .pwErrorMessage {
+  display: none !important;
+}
+
+.subOptionComponent {
+  margin-top: 0.625rem;
+}
+
+.keepLoginComponent {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+input[type='checkbox'] {
+  width: 24px;
+  height: 24px;
+  background-repeat: no-repeat;
+  background-size: 24px 24px;
+  margin-right: 5px;
+  appearance: none;
+  background-image: url('../images/unchecked.svg');
+}
+
+input[type='checkbox']:checked {
+  background-image: url('../images/checked.svg');
+}
+
+.keepLoginText {
+  margin: 0;
+  user-select: none;
+  pointer-events: none;
+}
+
+.ipSecurityComponent {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .loginForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .loginButton {
+    width: 460px;
+  }
+  .loginFormInput {
+    width: 460px;
+  }
+  .subOptionComponent {
+    width: 460px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .ipSecurityOptionText {
+    color: #121212;
+    text-decoration: none;
+  }
+  .ipSecurityComponent {
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+  }
+  .ipSecurityOptionText {
+    margin-right: 0.5rem;
+  }
+  .ipSecurityToggle {
+    display: none;
+  }
+  .ipSecurityOptionButtonOn {
+    display: none;
+    color: #121212;
+    cursor: pointer;
+    border-radius: 4px;
+    user-select: none;
+    font-weight: bold;
+  }
+  .ipSecurityOptionButtonOff {
+    color: #999999;
+    cursor: pointer;
+    border-radius: 4px;
+    user-select: none;
+    font-weight: bold;
+  }
+
+  .ipSecurityToggle:checked ~ .ipSecurityOptionButtonOff {
+    display: none;
+  }
+  .ipSecurityToggle:checked ~ .ipSecurityOptionButtonOn {
+    display: block;
+  }
+}
