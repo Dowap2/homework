@@ -1,10 +1,32 @@
-:root {
+/* :root {
   --font-base: 1rem;
   --margin: 1rem;
+  --green-color: #03cf5d;
+  --border-color: #dadada;
+  --focus-color: #eef6ff;
+  --font-size-small: 0.75rem;
+  --font-size-base: 1rem;
+  --input-height: 3rem;
+  --button-height: 2.8125rem;
+  --button-width: 460px;
+  --input-padding: 1rem;
+  --error-color: red;
 }
 
 body {
   margin: 0;
+}
+
+.screenReaderOnly {
+  position: absolute;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(100%);
+  white-space: nowrap;
+  border-width: 0;
+  visibility: hidden;
+  clip: rect(0, 0, 0, 0);
 }
 
 .loginComponent {
@@ -24,54 +46,51 @@ body {
   width: 230px;
 }
 
-.loginButton {
+.loginButton,
+.loginFormInput {
   width: 100%;
-  height: 2.8125rem;
-  background-color: #03cf5d;
+  box-sizing: border-box;
+}
+
+.loginButton {
+  height: var(--button-height);
+  background-color: var(--green-color);
   color: #fff;
-  font-size: 1rem;
+  font-size: var(--font-size-base);
   margin-top: 1.25rem;
   padding: 0;
   border: 0;
 }
 
 .loginFormInput {
-  box-sizing: border-box;
-  width: 100%;
-  height: 3rem;
-  padding: 1rem;
+  height: var(--input-height);
+  padding: var(--input-padding);
   margin-top: 0.5rem;
-  border: 1px solid #dadada;
+  border: 1px solid var(--border-color);
   background-color: #fff;
 }
 
 .loginFormInput:focus {
-  border-color: #03cf5d;
+  border-color: var(--green-color);
   outline: none;
-  background-color: #eef6ff;
+  background-color: var(--focus-color);
 }
 
 .idErrorMessage,
 .pwErrorMessage {
-  color: red;
-  font-size: 0.75rem;
+  color: var(--error-color);
+  font-size: var(--font-size-small);
   margin-top: 0.5rem;
   margin-bottom: 0.625rem;
   display: none;
 }
 
-.loginFormInput:invalid:not(placeholder-shown) + .idErrorMessage {
-  display: block;
-}
-
-.loginFormInput:placeholder-shown + .idErrorMessage {
-  display: none !important;
-}
-
+.loginFormInput:invalid:not(placeholder-shown) + .idErrorMessage,
 .loginFormInput:invalid:not(placeholder-shown) + .pwErrorMessage {
   display: block;
 }
 
+.loginFormInput:placeholder-shown + .idErrorMessage,
 .loginFormInput:placeholder-shown + .pwErrorMessage {
   display: none !important;
 }
@@ -86,7 +105,7 @@ body {
   align-items: center;
 }
 
-input[type='checkbox'] {
+.keepLoginCheckbox {
   width: 24px;
   height: 24px;
   background-repeat: no-repeat;
@@ -96,7 +115,7 @@ input[type='checkbox'] {
   background-image: url('../images/unchecked.svg');
 }
 
-input[type='checkbox']:checked {
+.keepLoginCheckbox:checked {
   background-image: url('../images/checked.svg');
 }
 
@@ -117,53 +136,274 @@ input[type='checkbox']:checked {
     align-items: center;
     justify-content: center;
   }
-  .loginButton {
-    width: 460px;
-  }
+
+  .loginButton,
   .loginFormInput {
-    width: 460px;
+    width: var(--button-width);
   }
+
   .subOptionComponent {
-    width: 460px;
+    width: var(--button-width);
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
+
+  .ipSecurityComponent {
+    display: flex;
+    align-items: center;
+    font-size: var(--font-size-base);
+  }
+
   .ipSecurityOptionText {
     color: #121212;
     text-decoration: none;
   }
-  .ipSecurityComponent {
-    display: flex;
-    align-items: center;
-    font-size: 1rem;
-  }
+
   .ipSecurityOptionText {
     margin-right: 0.5rem;
   }
+
   .ipSecurityToggle {
     display: none;
   }
-  .ipSecurityOptionButtonOn {
+
+  .ipSecurityOn {
     display: none;
-    color: #121212;
+    color: var(--green-color);
     cursor: pointer;
-    border-radius: 4px;
-    user-select: none;
-    font-weight: bold;
-  }
-  .ipSecurityOptionButtonOff {
-    color: #999999;
-    cursor: pointer;
-    border-radius: 4px;
-    user-select: none;
-    font-weight: bold;
   }
 
-  .ipSecurityToggle:checked ~ .ipSecurityOptionButtonOff {
+  .ipSecurityOff {
+    display: inline;
+    cursor: pointer;
+  }
+
+  .ipSecurityCheckbox {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+
+  #ipSecurityOnOff:focus-visible + .ipSecurityToggleLabel span {
+    outline: 2px solid black;
+    border-radius: 3px;
+  }
+
+  .ipSecurityCheckbox:checked + .ipSecurityToggleLabel .ipSecurityOn {
+    display: inline;
+  }
+
+  .ipSecurityCheckbox:checked + .ipSecurityToggleLabel .ipSecurityOff {
     display: none;
   }
-  .ipSecurityToggle:checked ~ .ipSecurityOptionButtonOn {
-    display: block;
+} */
+
+:root {
+  --font-base: 1rem;
+  --margin: 1rem;
+  --green-color: #03cf5d;
+  --border-color: #dadada;
+  --focus-color: #eef6ff;
+  --font-size-small: 0.75rem;
+  --font-size-base: 1rem;
+  --input-height: 3rem;
+  --button-height: 2.8125rem;
+  --button-width: 460px;
+  --input-padding: 1rem;
+  --error-color: red;
+}
+
+body {
+  margin: 0;
+}
+
+.screenReaderOnly {
+  position: absolute;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(100%);
+  white-space: nowrap;
+  border-width: 0;
+  visibility: hidden;
+  clip: rect(0, 0, 0, 0);
+}
+
+.loginComponent {
+  margin: 1.25rem;
+  margin-top: 5rem;
+  text-align: center; /* Center content inside the component */
+}
+
+.loginForm {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.loginLogo {
+  width: 230px;
+  margin: 0 auto; /* Center the logo */
+}
+
+.loginButton,
+.loginFormInput {
+  width: 100%;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+.loginButton {
+  height: var(--button-height);
+  background-color: var(--green-color);
+  color: #fff;
+  font-size: var(--font-size-base);
+  margin-top: 1.25rem;
+  padding: 0;
+  border: 0;
+}
+
+.loginFormInput {
+  height: var(--input-height);
+  padding: var(--input-padding);
+  margin-top: 0.5rem;
+  border: 1px solid var(--border-color);
+  background-color: #fff;
+}
+
+.loginFormInput:focus {
+  border-color: var(--green-color);
+  outline: none;
+  background-color: var(--focus-color);
+}
+
+.idErrorMessage,
+.pwErrorMessage {
+  color: var(--error-color);
+  font-size: var(--font-size-small);
+  margin-top: 0.5rem;
+  margin-bottom: 0.625rem;
+  display: none;
+}
+
+.loginFormInput:invalid:not(placeholder-shown) + .idErrorMessage,
+.loginFormInput:invalid:not(placeholder-shown) + .pwErrorMessage {
+  display: block;
+}
+
+.loginFormInput:placeholder-shown + .idErrorMessage,
+.loginFormInput:placeholder-shown + .pwErrorMessage {
+  display: none !important;
+}
+
+.subOptionComponent {
+  float: right;
+  margin-top: 0.625rem;
+  text-align: right;
+}
+
+.keepLoginComponent {
+  height: 24px;
+  float: left;
+}
+
+.keepLoginCheckbox {
+  width: 24px;
+  height: 24px;
+  background-repeat: no-repeat;
+  background-size: 24px 24px;
+  margin: 0;
+  vertical-align: top;
+  margin-right: 5px;
+  appearance: none;
+  background-image: url('../images/unchecked.svg');
+}
+
+.keepLoginCheckbox:checked {
+  background-image: url('../images/checked.svg');
+}
+
+.keepLoginText {
+  vertical-align: baseline;
+  margin: 0;
+  user-select: none;
+}
+
+.ipSecurityComponent {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .loginForm {
+    width: var(--button-width);
+  }
+
+  .loginButton,
+  .loginFormInput {
+    width: var(--button-width);
+  }
+
+  .subOptionComponent {
+    width: var(--button-width);
+  }
+
+  .ipSecurityComponent {
+    display: inline-block;
+    font-size: var(--font-size-base);
+  }
+
+  .ipSecurityOptionText {
+    color: #121212;
+    text-decoration: none;
+  }
+
+  .ipSecurityOptionText {
+    margin-right: 0.5rem;
+  }
+
+  .ipSecurityToggle {
+    display: none;
+  }
+
+  .ipSecurityOn {
+    display: none;
+    color: var(--green-color);
+    cursor: pointer;
+  }
+
+  .ipSecurityOff {
+    display: inline;
+    cursor: pointer;
+  }
+
+  .ipSecurityCheckbox {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+
+  #ipSecurityOnOff:focus-visible + .ipSecurityToggleLabel span {
+    outline: 2px solid black;
+    border-radius: 3px;
+  }
+
+  .ipSecurityCheckbox:checked + .ipSecurityToggleLabel .ipSecurityOn {
+    display: inline;
+  }
+
+  .ipSecurityCheckbox:checked + .ipSecurityToggleLabel .ipSecurityOff {
+    display: none;
   }
 }

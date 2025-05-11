@@ -21,27 +21,29 @@
         </svg>
       </h1>
       <form action="/login" method="post" class="loginForm" role="form">
-        <label for="userId" class="inputGroup">
-          <input type="email" id="userId" name="userId" placeholder="아이디(이메일)" class="loginFormInput" required aria-describedby="idErrorMessage" />
-          <span class="idErrorMessage" aria-live="assertive">아이디는 이메일 형식으로 입력해 주세요</span>
-        </label>
-        <label for="password" class="inputGroup">
-          <input type="password" id="password" name="password" placeholder="비밀번호" class="loginFormInput" minlength="10" required aria-describedby="pwErrorMessage" />
-          <span class="pwErrorMessage" aria-live="assertive">비밀번호는 10자리 이상 입력해 주세요</span>
-        </label>
+        <label for="userId" class="screenReaderOnly">아이디(이메일)</label>
+        <input type="email" id="userId" name="userId" placeholder="아이디(이메일)" class="loginFormInput" required aria-describedby="userId-error" />
+        <span class="idErrorMessage" aria-live="assertive">아이디는 이메일 형식으로 입력해 주세요</span>
+
+        <label for="password" class="screenReaderOnly">비밀번호</label>
+        <input type="password" id="password" name="password" placeholder="비밀번호" class="loginFormInput" minlength="10" required aria-describedby="password-error" />
+        <span class="pwErrorMessage" aria-live="assertive">비밀번호는 10자리 이상 입력해 주세요</span>
+
         <button type="submit" class="loginButton" aria-label="로그인">로그인</button>
-        <label class="subOptionComponent">
-          <label for="keepLogin" class="keepLoginComponent">
-            <input type="checkbox" name="keepLogin" id="keepLogin" />
-            <span class="keepLoginText">로그인 상태 유지</span>
-          </label>
-          <label for="ipSecurity" class="ipSecurityComponent">
-            <a href="./pages/ip_security.html" target="_blank" rel="noopener noreferrer" class="ipSecurityOptionText">IP 보안</a>
-            <input type="checkbox" id="ipToggle" class="ipSecurityToggle" tabindex="0" />
-            <label for="ipToggle" class="ipSecurityOptionButtonOn" tabindex="0" role="button">ON</label>
-            <label for="ipToggle" class="ipSecurityOptionButtonOff" tabindex="0" role="button">OFF</label>
-          </label>
-        </label>
+        <div class="subOptionComponent">
+          <div class="keepLoginComponent">
+            <input type="checkbox" name="keepLogin" id="keepLogin" class="keepLoginCheckbox" />
+            <label for="keepLogin" class="keepLoginText">로그인 상태 유지</label>
+          </div>
+          <div class="ipSecurityComponent">
+            <a href="./pages/ip_security.html" target="_blank" class="ipSecurityOptionText">IP 보안</a>
+            <input type="checkbox" id="ipSecurityOnOff" class="ipSecurityCheckbox" class="screenReaderOnly" />
+            <label for="ipSecurityOnOff" class="ipSecurityToggleLabel">
+              <span class="ipSecurityOn">ON</span>
+              <span class="ipSecurityOff">OFF</span>
+            </label>
+          </div>
+        </div>
       </form>
     </div>
   </body>
