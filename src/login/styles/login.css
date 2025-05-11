@@ -208,6 +208,8 @@ body {
 :root {
   --font-base: 1rem;
   --margin: 1rem;
+  --text-color: #121212;
+  --gray-color: #dadada;
   --green-color: #03cf5d;
   --border-color: #dadada;
   --focus-color: #eef6ff;
@@ -217,11 +219,12 @@ body {
   --button-height: 2.8125rem;
   --button-width: 460px;
   --input-padding: 1rem;
-  --error-color: red;
+  --error-color: #ff1414;
 }
 
 body {
   margin: 0;
+  color: var(--text-color);
 }
 
 .screenReaderOnly {
@@ -359,7 +362,7 @@ body {
   }
 
   .ipSecurityOptionText {
-    color: #121212;
+    color: var(--text-color);
     text-decoration: none;
   }
 
@@ -378,6 +381,7 @@ body {
   }
 
   .ipSecurityOff {
+    color: var(--gray-color);
     display: inline;
     cursor: pointer;
   }
@@ -395,7 +399,7 @@ body {
   }
 
   #ipSecurityOnOff:focus-visible + .ipSecurityToggleLabel span {
-    outline: 2px solid black;
+    outline: 2px solid var(--text-color);
     border-radius: 3px;
   }
 
