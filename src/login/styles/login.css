@@ -306,6 +306,7 @@ body {
   float: right;
   margin-top: 0.625rem;
   text-align: right;
+  user-select: none;
 }
 
 .keepLoginComponent {
@@ -332,7 +333,6 @@ body {
 .keepLoginText {
   vertical-align: baseline;
   margin: 0;
-  user-select: none;
 }
 
 .ipSecurityComponent {
