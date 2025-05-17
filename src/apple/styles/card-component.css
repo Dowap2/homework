@@ -1,0 +1,188 @@
+@import './reset.css';
+@import './theme.css';
+@import './base.css';
+
+.apple-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--base-spacing);
+}
+
+.apple-grid--single-column {
+  margin-bottom: var(--base-spacing);
+}
+
+.apple-item {
+  width: 100%;
+  height: var(--size);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.apple-item__text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: var(--large-spacing);
+
+  h1 {
+    font-size: var(--large-text);
+    font-weight: bold;
+    margin-bottom: var(--small-spacing);
+  }
+
+  p {
+    color: var(--gray);
+    margin-top: var(--x-small-spacing);
+  }
+}
+
+.apple-item__buttons {
+  display: flex;
+  gap: var(--small-spacing);
+  margin-top: var(--base-spacing);
+  button {
+    font-size: var(--xx-small-text);
+    padding: var(--x-small-spacing) var(--small-spacing) var(--x-small-spacing) var(--small-spacing);
+    border-radius: 20px;
+  }
+  button:nth-child(odd) {
+    border: 0;
+  }
+  button:nth-child(even) {
+    background: none;
+  }
+}
+
+.apple-item__buttons button:hover {
+  filter: brightness(1.2);
+  cursor: pointer;
+}
+
+.apple-grid--single-column {
+  .apple-item:nth-child(odd) {
+    color: var(--white);
+    .apple-item__buttons {
+      button:nth-child(odd) {
+        background: var(--blue-400);
+        color: var(--white);
+      }
+      button:nth-child(even) {
+        color: var(--blue-400);
+        border: 1px solid var(--blue-400);
+      }
+    }
+  }
+  .apple-item:nth-child(even) {
+    color: var(--black);
+    .apple-item__buttons {
+      button:nth-child(odd) {
+        background: var(--black);
+        color: var(--white);
+      }
+      button:nth-child(even) {
+        color: var(--black);
+        border: 1px solid var(--black);
+      }
+    }
+  }
+
+  .apple-item:nth-child(1) {
+    background-image: url(../products/ipad_pro.jpeg);
+  }
+  .apple-item:nth-child(2) {
+    background-image: url(../products/ipad_air.jpeg);
+  }
+  .apple-item:nth-child(3) {
+    background-image: url(../products/iphone15_pro.jpeg);
+  }
+}
+
+.apple-grid--two-column {
+  .apple-item:nth-child(odd) {
+    color: var(--black);
+    .apple-item__buttons {
+      button:nth-child(odd) {
+        background: var(--black);
+        color: var(--white);
+      }
+      button:nth-child(even) {
+        color: var(--black);
+        border: 1px solid var(--black);
+      }
+    }
+  }
+  .apple-item:nth-child(even) {
+    color: var(--white);
+    .apple-item__buttons {
+      button:nth-child(odd) {
+        background: var(--blue-400);
+        color: var(--white);
+      }
+      button:nth-child(even) {
+        color: var(--blue-400);
+        border: 1px solid var(--blue-400);
+      }
+    }
+  }
+
+  .apple-item:nth-child(1) {
+    background-image: url(../products/iphone15.jpeg);
+  }
+  .apple-item:nth-child(2) {
+    background-image: url(../products/apple_watch.jpeg);
+  }
+  .apple-item:nth-child(3) {
+    background-image: url(../products/macbook_air.jpeg);
+  }
+  .apple-item:nth-child(4) {
+    background-image: url(../products/airpods_pro.jpeg);
+  }
+}
+
+/* ✅ 고해상도 디바이스용 이미지 대응 */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .apple-grid--single-column {
+    .apple-item:nth-child(1) {
+      background-image: url(../products/ipad_pro_2x.jpeg);
+    }
+    .apple-item:nth-child(2) {
+      background-image: url(../products/ipad_air_2x.jpeg);
+    }
+    .apple-item:nth-child(3) {
+      background-image: url(../products/iphone15_pro_2x.jpeg);
+    }
+  }
+
+  .apple-grid--two-column {
+    .apple-item:nth-child(1) {
+      background-image: url(../products/iphone15_2x.jpeg);
+    }
+    .apple-item:nth-child(2) {
+      background-image: url(../products/apple_watch_2x.jpeg);
+    }
+    .apple-item:nth-child(3) {
+      background-image: url(../products/macbook_air_2x.jpeg);
+    }
+    .apple-item:nth-child(4) {
+      background-image: url(../products/airpods_pro_2x.jpeg);
+    }
+  }
+}
+
+/* ✅ 데스크톱 이상에서 레이아웃 및 와이드 이미지 변경 */
+@media (min-width: 1024px) {
+  .apple-grid--single-column {
+    .apple-item:nth-child(3) {
+      background-image: url(../products/iphone15_pro_wide_2x.jpeg);
+    }
+  }
+
+  .apple-grid--two-column {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
